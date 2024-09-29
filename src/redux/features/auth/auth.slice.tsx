@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { TUser } from "@/types/user";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 

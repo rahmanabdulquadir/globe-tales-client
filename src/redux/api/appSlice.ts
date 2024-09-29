@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   BaseQueryFn,
   createApi,
@@ -6,15 +7,16 @@ import {
   FetchBaseQueryError,
 } from "@reduxjs/toolkit/query/react";
 import Cookies from "js-cookie";
-import { setState, setToken, setUser } from "../features/auth/auth.slice";
+
 import { RootState } from "../store/store";
+import { setState, setToken, setUser } from "../features/auth/auth.slice";
 
 export const baseUrl = process.env.NEXT_PUBLIC_API_URL;
 
 const baseQuery = fetchBaseQuery({
   baseUrl: baseUrl,
   prepareHeaders: (headers, { getState }) => {
-    const token = (getState() as RootState).auth.token;
+    const token = (getState() as RootState)?.auth?.token;
     if (token) {
       headers.set("Authorization", `Bearer ${token}`);
     }
