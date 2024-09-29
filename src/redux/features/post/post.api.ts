@@ -2,7 +2,6 @@
 import { api } from "@/redux/api/appSlice";
 import { IPost, TVoting } from "@/types/post";
 
-
 const postApi = api.injectEndpoints({
   endpoints: (builder) => ({
     getAllPost: builder.query<
