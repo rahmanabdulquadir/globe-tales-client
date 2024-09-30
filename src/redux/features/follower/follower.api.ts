@@ -2,6 +2,7 @@ import { api } from "@/redux/api/appSlice";
 import { IComment } from "@/types/comment";
 import { IFollower } from "@/types/follwer";
 
+
 const commentApi = api.injectEndpoints({
   endpoints: (builder) => ({
     getFollwers: builder.query<{ data: IFollower[] }, undefined>({
