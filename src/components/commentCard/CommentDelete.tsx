@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   Dialog,
   DialogClose,
@@ -8,11 +9,12 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { useDeteCommentMutation } from "@/redux/features/comment/comment.api";
-import { IComment } from "@/types/comment";
+
 import { AlertTriangle } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "../ui/button";
+import { useDeteCommentMutation } from "@/redux/features/comment/comment.api";
+import { IComment } from "@/types/comment";
 const CommentDelete = ({ comment }: { comment: IComment }) => {
   const { comment: commentText, _id } = comment;
 

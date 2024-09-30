@@ -1,4 +1,3 @@
-
 import { ICategories } from "./category";
 import { TUser } from "./user";
 
@@ -14,6 +13,7 @@ export interface IPost {
   downvotes: string[];
   upvoteCount: number;
   downvoteCount: number;
+  commentCount: number;
   createdAt: string;
   updatedAt: string;
 }

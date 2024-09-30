@@ -1,9 +1,11 @@
 import { useAppSelector } from "@/redux/hook";
-import { IComment } from "@/types/comment";
+
 import { format } from "date-fns";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { IComment } from "@/types/comment";
 import CommentDelete from "./CommentDelete";
 import CommentUpdate from "./CommentUpdate";
+
 
 const CommentCard = ({ comment }: { comment: IComment }) => {
   const { comment: commentText, user, createdAt } = comment;

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   Dialog,
   DialogContent,
@@ -7,13 +9,14 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { useUpdateCommentMutation } from "@/redux/features/comment/comment.api";
-import { IComment } from "@/types/comment";
+
 import { DialogClose } from "@radix-ui/react-dialog";
 import { Edit2 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "../ui/button";
 import { Textarea } from "../ui/textarea";
+import { IComment } from "@/types/comment";
+import { useUpdateCommentMutation } from "@/redux/features/comment/comment.api";
 const CommentUpdate = ({ comment }: { comment: IComment }) => {
   const { comment: commentText, _id } = comment;
   const [updateComment, { isError }] = useUpdateCommentMutation();

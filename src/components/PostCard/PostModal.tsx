@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -16,15 +17,15 @@ import { MessageCircle } from "lucide-react";
 import React, { useCallback, useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroller";
 import { toast } from "sonner";
-import CommentCard from "../commentCard/CommentCard";
-import CommentCardSkeleton from "../skeletons/CommentCardSkeleton";
-import PostCardSkeleton from "../skeletons/PostCardSkeleton";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Card } from "../ui/card";
 import { Separator } from "../ui/separator";
 import { Skeleton } from "../ui/skeleton";
 import { Textarea } from "../ui/textarea";
 import PostContent from "./PostContent";
+import PostCardSkeleton from "../skeletons/PostCardSkeletons";
+import CommentCardSkeleton from "../skeletons/CommentCardSkeleton";
+import CommentCard from "../commentCard/CommentCard";
 
 interface IPorps {
   post: IPost;
