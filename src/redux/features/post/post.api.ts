@@ -33,6 +33,15 @@ const postApi = api.injectEndpoints({
       },
       invalidatesTags: ["post"],
     }),
+    deletePost: builder.mutation<{ data: IPost }, string>({
+      query: (postId) => {
+        return {
+          url: `/post/delete/${postId}`,
+          method: "DELETE",
+        };
+      },
+      invalidatesTags: ["post"],
+    }),
     votePost: builder.mutation<
       { data: IPost },
       { postId: string; vote: TVoting }
@@ -46,5 +55,9 @@ const postApi = api.injectEndpoints({
     }),
   }),
 });
-export const { useGetAllPostQuery, useVotePostMutation, useCratePostMutation } =
-  postApi;
+export const {
+  useGetAllPostQuery,
+  useVotePostMutation,
+  useCratePostMutation,
+  useDeletePostMutation,
+} = postApi;
