@@ -6,7 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroller";
 import PostCard from "../PostCard/PostCard";
-import PostCardSkeleton from "../skeletons/PostCardSkeletons";
+import PostCardSkeleton from "../skeletons/PostCardSkeleton";
 import NoPostFound from "./NoPostFound";
 
 const FeedContent = () => {
@@ -69,7 +69,9 @@ const FeedContent = () => {
         hasMore={more}
         useWindow={false}
         loader={
-          <div className="w-[400px] lg:w-[700px] xl:w-[900px]">{Skeletons}</div>
+          <div className="w-[400px] lg:w-[700px] xl:w-[900px]">
+            <PostCardSkeleton />
+          </div>
         }
       >
         {posts.map((post, i) => {
