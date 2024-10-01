@@ -6,7 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroller";
 import PostCard from "../PostCard/PostCard";
-import PostCardSkeleton from "../skeletons/PostCardSkeletons";
+import PostCardSkeleton from "../skeletons/PostCardSkeleton";
 import NoPostFound from "./NoPostFound";
 
 const FeedContent = () => {
@@ -21,6 +21,7 @@ const FeedContent = () => {
     limit: 10,
     categories: searchParams.get("category") || "",
     searchTerm: searchParams.get("searchTerm") || "",
+    premium: searchParams.get("premium") || "",
   });
 
   // Fetch posts and append to the list when data changes

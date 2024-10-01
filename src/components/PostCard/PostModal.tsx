@@ -11,21 +11,22 @@ import {
   useCreateCommentMutation,
   useGetCommentsByPostIdQuery,
 } from "@/redux/features/comment/comment.api";
+import { useAppSelector } from "@/redux/hook";
 import { IComment } from "@/types/comment";
 import { IPost } from "@/types/post";
 import { MessageCircle } from "lucide-react";
 import React, { useCallback, useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroller";
 import { toast } from "sonner";
+import CommentCard from "../commentCard/CommentCard";
+import CommentCardSkeleton from "../skeletons/CommentCardSkeleton";
+import PostCardSkeleton from "../skeletons/PostCardSkeletons";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Card } from "../ui/card";
 import { Separator } from "../ui/separator";
 import { Skeleton } from "../ui/skeleton";
 import { Textarea } from "../ui/textarea";
 import PostContent from "./PostContent";
-import PostCardSkeleton from "../skeletons/PostCardSkeletons";
-import CommentCardSkeleton from "../skeletons/CommentCardSkeleton";
-import CommentCard from "../commentCard/CommentCard";
 
 interface IPorps {
   post: IPost;
@@ -35,6 +36,8 @@ const PostModal: React.FC<IPorps> = ({ post }) => {
   const [open, setOpen] = useState(false);
   const [page, setPage] = useState(1);
   const [comments, setComments] = useState<IComment[]>([]);
+
+  const { user } = useAppSelector((state) => state.auth);
 
   const {
     data = { data: [], totalDoc: 0 },
@@ -64,7 +67,13 @@ const PostModal: React.FC<IPorps> = ({ post }) => {
   // Handle new comment creation
   const handleComment = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!user) {
+      toast.error("Please login to comment");
+      return;
+    }
     const toastId = toast.loading("Please wait");
+
     try {
       const form = e.target as HTMLFormElement;
       const comment = form.comment.value;
@@ -153,6 +162,14 @@ const PostModal: React.FC<IPorps> = ({ post }) => {
                     placeholder="Write a comment..."
                     name="comment"
                     className="w-full min-h-[80px] "
+                    required
+                    onFocus={(e) => {
+                      if (!user) {
+                        toast.error("Please login to comment");
+                        e.target.blur();
+                        return;
+                      }
+                    }}
                   />
                   <Button type="submit" className="mt-2">
                     Post Comment
