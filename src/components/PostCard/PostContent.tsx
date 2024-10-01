@@ -3,8 +3,8 @@ import { CardContent, CardHeader } from "@/components/ui/card";
 import { IPost } from "@/types/post";
 import { format } from "date-fns";
 import PostGallery from "./PostGallery";
-import { ProfileHoverCard } from "./ProfileCard";
 import PostOptions from "./PostOptions";
+import { ProfileHoverCard } from "./ProfileCard";
 const PostContent = ({ post }: { post: IPost }) => {
   return (
     <>
