@@ -6,7 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroller";
 import PostCard from "../PostCard/PostCard";
-import PostCardSkeleton from "../skeletons/PostCardSkeleton";
+import PostCardSkeleton from "../skeletons/PostCardSkeletons";
 import NoPostFound from "./NoPostFound";
 
 const FeedContent = () => {
