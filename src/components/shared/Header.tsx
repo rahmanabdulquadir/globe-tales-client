@@ -19,7 +19,7 @@ const Header = () => {
       <div className="layout_container flex justify-between gap-4 items-center">
         <div className="flex items-center gap-2">
           <LeftSidebar />
-          <Link href={"/"} className="text-lg font-bold text-black">
+          <Link href={"/"} className="text-3xl font-bold text-black">
             Globe Tales{" "}
           </Link>
         </div>

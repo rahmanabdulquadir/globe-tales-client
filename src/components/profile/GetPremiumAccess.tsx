@@ -24,8 +24,10 @@ const GetPremiumAccess = () => {
 
   const handleGetPremiumAccess = async () => {
     setIsLoading(true);
+    console.log('Hello from premium access')
     try {
       const url = baseUrl + "/user/get-varify-url";
+  
       const res = await fetch(url, {
         method: "POST",
         headers: {
@@ -34,6 +36,7 @@ const GetPremiumAccess = () => {
         },
       });
       const { data } = (await res.json()) || {};
+      console.log(res)
 
       if (data && data.payment_url) {
         window.location.href = data.payment_url;
