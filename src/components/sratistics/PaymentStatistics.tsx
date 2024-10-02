@@ -20,7 +20,7 @@ import { useGetPaymentStatisticsQuery } from "@/redux/features/statistics/statis
 import { addDays, format, parseISO } from "date-fns";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
-import "react-datepicker/dist/react-datepicker.css";
+// import "react-datepicker/dist/react-datepicker.css";
 import { DateRange } from "react-day-picker";
 import DateRangePicker from "../shared/DateRangePicker";
 import StatisticSkeleton from "../skeletons/StatisticSkeleton";
