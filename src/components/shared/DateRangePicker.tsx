@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { addDays, format } from "date-fns";
@@ -58,7 +59,7 @@ const DateRangePicker: React.FC<IProps> = ({ className, onChange }) => {
             mode="range"
             defaultMonth={date?.from}
             selected={date}
-            onSelect={(date) => {
+            onSelect={(date: any) => {
               setDate(date);
               onChange(date);
             }}
