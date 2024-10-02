@@ -24,7 +24,6 @@ const GetPremiumAccess = () => {
 
   const handleGetPremiumAccess = async () => {
     setIsLoading(true);
-    console.log('Hello from premium access')
     try {
       const url = baseUrl + "/user/get-varify-url";
   

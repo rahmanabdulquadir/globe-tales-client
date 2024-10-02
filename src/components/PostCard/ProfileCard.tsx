@@ -16,8 +16,8 @@ import { TUser } from "@/types/user";
 import { BadgeCheck, CalendarDays, UserPlus } from "lucide-react";
 import { ImSpinner2 } from "react-icons/im";
 import { toast } from "sonner";
-import OntheGoTooltip from "../shared/OntheGoTooltip";
 import { Button } from "../ui/button";
+import GlobeTalesTooltip from "../shared/GlobeTalesTooltip";
 const ProfileCard = ({ user }: { user: TUser }) => {
   const [follow, { isError, isLoading }] = useFollowMutation();
   const [unfollow, { isLoading: isLoadingUnfollow }] = useUnFollowMutation();
@@ -53,9 +53,9 @@ const ProfileCard = ({ user }: { user: TUser }) => {
             {user.firstName} {user.lastName}
           </span>
           {user.isPremium ? (
-            <OntheGoTooltip message="Verified user">
+            <GlobeTalesTooltip message="Verified user">
               <BadgeCheck width={20} className="text-primaryMat" />
-            </OntheGoTooltip>
+            </GlobeTalesTooltip>
           ) : (
             ""
           )}
@@ -95,9 +95,9 @@ export const ProfileHoverCard = ({ user }: { user: TUser }) => {
             </span>
           </h3>
           {user.isPremium ? (
-            <OntheGoTooltip message="Verified user">
+            <GlobeTalesTooltip message="Verified user">
               <BadgeCheck width={20} className="text-primaryMat" />
-            </OntheGoTooltip>
+            </GlobeTalesTooltip>
           ) : (
             ""
           )}
