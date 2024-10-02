@@ -1,13 +1,17 @@
 import { useAppSelector } from "@/redux/hook";
-
-import { format } from "date-fns";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { IComment } from "@/types/comment";
+import { format } from "date-fns";
+import React from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import CommentDelete from "./CommentDelete";
 import CommentUpdate from "./CommentUpdate";
 
+interface IPorps {
+  comment: IComment;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
+}
 
-const CommentCard = ({ comment }: { comment: IComment }) => {
+const CommentCard: React.FC<IPorps> = ({ comment, setPage }) => {
   const { comment: commentText, user, createdAt } = comment;
   const { user: auth } = useAppSelector((state) => state.auth);
   return (
@@ -30,8 +34,8 @@ const CommentCard = ({ comment }: { comment: IComment }) => {
         </div>
         {auth && auth._id === user._id && (
           <div className="flex items-center justify-start gap-[10px] mt-[10px]">
-            <CommentDelete comment={comment} />
-            <CommentUpdate comment={comment}/>
+            <CommentDelete comment={comment} setPage={setPage} />
+            <CommentUpdate comment={comment} setPage={setPage} />
           </div>
         )}
       </div>

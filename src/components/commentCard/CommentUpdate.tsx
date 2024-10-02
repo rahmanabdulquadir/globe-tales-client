@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   Dialog,
   DialogContent,
@@ -9,15 +9,20 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-
+import { useUpdateCommentMutation } from "@/redux/features/comment/comment.api";
+import { IComment } from "@/types/comment";
 import { DialogClose } from "@radix-ui/react-dialog";
 import { Edit2 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "../ui/button";
 import { Textarea } from "../ui/textarea";
-import { IComment } from "@/types/comment";
-import { useUpdateCommentMutation } from "@/redux/features/comment/comment.api";
-const CommentUpdate = ({ comment }: { comment: IComment }) => {
+
+interface IPorps {
+  comment: IComment;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
+}
+
+const CommentUpdate: React.FC<IPorps> = ({ comment, setPage }) => {
   const { comment: commentText, _id } = comment;
   const [updateComment, { isError }] = useUpdateCommentMutation();
 
@@ -29,6 +34,7 @@ const CommentUpdate = ({ comment }: { comment: IComment }) => {
     const comment = form.comment.value as string;
     try {
       const res = await updateComment({ comment, commentId: _id });
+      setPage(1);
       const error = res.error as any;
       if (isError || (error && error.status !== 200)) {
         toast.error("Something went wrong");
