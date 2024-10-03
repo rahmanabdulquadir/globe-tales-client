@@ -5,7 +5,7 @@ import HeroSection from "@/components/feed/HeroSection"
 
 const HomeView = () => {
   return (
-    <div className="w-full h-[calc(100vh-107px)] flex">
+    <div className="w-full h-[calc(100vh-107px)] flex ">
       <HeroSection />
       <FilterBar />
       <FeedContent />

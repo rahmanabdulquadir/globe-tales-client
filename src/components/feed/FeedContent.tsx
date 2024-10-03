@@ -67,7 +67,7 @@ const FeedContent = () => {
   
 
   return (
-    <div className="h-[calc(100vh-200px)] overflow-y-auto overflow-x-hidden smoothBar">
+    <div className="h-[calc(100vh-200px)] overflow-y-auto overflow-x-hidden smoothBar bg-gradient-to-r from-orange-500 via-purple-500 to-purple-700">
       <InfiniteScroll
         pageStart={0}
         loadMore={handleLoadMore}

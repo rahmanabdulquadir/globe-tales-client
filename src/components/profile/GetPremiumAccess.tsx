@@ -15,7 +15,6 @@ import {
 import { baseUrl } from "@/redux/api/appSlice";
 import { useAppSelector } from "@/redux/hook";
 import { CheckCircle, Star } from "lucide-react";
-import Image from "next/image";
 import { useState } from "react";
 import { ImSpinner2 } from "react-icons/im";
 const GetPremiumAccess = () => {
@@ -51,17 +50,9 @@ const GetPremiumAccess = () => {
       <DialogTrigger asChild>
         <Button
           variant={"outline"}
-          className="mt-[20px] relative group/premium"
+          className="mt-[20px] bg-primaryMat text-white relative group/premium"
         >
           Verify Account
-          <Image
-            width={100}
-            height={100}
-            src="/images/crown.png"
-            alt="verify"
-            className="absolute top-[-13px] right-[-16px] rotate-[20deg] w-[40px] scale-1 group-hover/premium:rotate-0 group-hover/premium:scale-[1.2]"
-            style={{ transition: "0.3s" }}
-          />
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[500px]">
@@ -108,7 +99,7 @@ const GetPremiumAccess = () => {
             </Badge>
           </div>
         </div>
-        <DialogFooter className="mt-6">
+        <DialogFooter className="mt-6 flex justify-center">
           <DialogClose asChild>
             <Button variant="outline">Maybe Later</Button>
           </DialogClose>

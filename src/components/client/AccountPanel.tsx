@@ -27,13 +27,13 @@ export function AccountPanel() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="avatarGradient center p-[5px] rounded-full cursor-pointer">
-          <div className="w-[40px] h-[40px] rounded-full overflow-hidden">
+        <button className="bg-gradient-to-r from-orange-500 via-purple-500 to-purple-700 center p-[5px] rounded-full cursor-pointer border border-black">
+          <div className="w-[70px] h-[70px] rounded-full overflow-hidden">
             <Image
               alt="profile"
               src={user?.image || "/images/avatar.jpg"}
-              width={80}
-              height={80}
+              width={100}
+              height={100}
               className="w-full h-full object-cover"
             />
           </div>

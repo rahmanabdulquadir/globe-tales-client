@@ -92,7 +92,7 @@ const CategoryFilterBox = () => {
   }, []);
 
   return (
-    <div>
+    <div className="">
       <h3 className="mb-2 text-lg font-medium">Categories</h3>
       <div className="px-[10px] border-[1px] border-borderColor rounded-[5px] w-full h-[40px] mb-[20px] relative">
         <input

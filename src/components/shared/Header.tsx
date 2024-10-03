@@ -20,7 +20,7 @@ const Header = () => {
       <div className="layout_container flex justify-between gap-4 items-center">
         <div className="flex items-center gap-2">
           <LeftSidebar />
-          <Link href={"/"} className="text-lg font-bold ">
+          <Link href={"/"} className="text-lg font-bold flex flex-col items-center">
             <Image
               width={60}
               height={60}
@@ -28,6 +28,7 @@ const Header = () => {
               alt="logo"
               className="w-[120px]  md:flex hidden"
             />
+            <h2 className="mt-[-10px]">Globe Tales</h2>
           </Link>
         </div>
         <nav className="hidden lg:flex gap-5 items-center ">
