@@ -1,5 +1,5 @@
 
-# GLobe Tales - Client
+# Globe Tales - Client
 
 ### Live URL: https://globe-tales-client.vercel.app/
 
