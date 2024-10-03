@@ -15,26 +15,26 @@ const Header = () => {
   const { user, isLoading, token } = useAppSelector((state) => state.auth);
 
   return (
-    <header className="py-5 lg:py-7 border-b sticky top-0 z-50 bg-white ">
+    <header className="py-3 lg:py-3 border-b sticky top-0 z-50  bg-gradient-to-r from-orange-500 via-purple-500 to-purple-700 mb-10">
       <div className="layout_container flex justify-between gap-4 items-center">
         <div className="flex items-center gap-2">
           <LeftSidebar />
-          <Link href={"/"} className="text-lg font-bold">
+          <Link href={"/"} className="text-lg font-bold ">
             <Image
               width={60}
               height={60}
               src="/images/logo.png"
               alt="logo"
-              className="w-[60px] md:flex hidden"
+              className="w-[120px]  md:flex hidden"
             />
           </Link>
         </div>
-        <nav className="hidden lg:flex gap-5 items-center">
+        <nav className="hidden lg:flex gap-5 items-center ">
           {navLinks.map((nav) => (
             <Link
               key={nav.path}
               href={nav.path}
-              className={`text-slate-700 hover:text-green-500 ${
+              className={`text-lg font-bold text-black hover:text-white ${
                 location === nav.path && "font-extrabold text-green-600"
               }`}
             >
