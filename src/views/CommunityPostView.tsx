@@ -4,7 +4,7 @@
 import DeleteCommunityPost from "@/components/ManageCommunityPost/ManageCommunityPost";
 import PostCard from "@/components/PostCard/PostCard";
 import PostModal from "@/components/PostCard/PostModal";
-import OntheGoPagination from "@/components/shared/OntheGoPagination";
+import GlobeTalesPagination from "@/components/shared/GlobeTalesPagination";
 import { Button } from "@/components/ui/button";
 import { useGetAllPostQuery } from "@/redux/features/post/post.api";
 import { useState } from "react";
@@ -16,7 +16,7 @@ const CommunityPostView = () => {
   });
   return (
     <div>
-      <OntheGoPagination
+      <GlobeTalesPagination
         className="mb-[10px]"
         totalDoc={data?.totalDoc || 0}
         onPageChange={(page) => setPage(page)}

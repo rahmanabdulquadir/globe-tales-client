@@ -25,7 +25,7 @@ const Profile = () => {
   }
 
   return (
-    <div className="w-full rounded-[10px] px-[25px] py-[20px]">
+    <div className="w-full rounded-[10px] px-[25px] py-[20px] ">
       <div className="flex items-start justify-start gap-[20px]">
         <Link
           href={"/profile/settings"}
@@ -47,10 +47,10 @@ const Profile = () => {
           {user?.firstName} {user?.lastName}
         </h3>
       </div>
-      <p className="text-primaryTxt mt-[20px]">
+      <p className="text-black font-bold text-lg mt-[20px]">
         <span className="font-[600]">Email: </span> {user?.email}
       </p>
-      <p className="text-primaryTxt mt-[8px]">
+      <p className="text-black font-bold text-lg mt-[8px]">
         <span className="font-[600]">user since: </span>{" "}
         {format(new Date(user?.createdAt || "12-30-2024"), "MMM dd, yyy")}
       </p>

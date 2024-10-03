@@ -1,7 +1,7 @@
 import AboutUsView from "@/views/AboutUsView";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "About us - On the go",
+  title: "About us - Globe Tales",
   description: "Travel media",
 };
 const page = () => {

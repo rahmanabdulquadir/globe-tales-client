@@ -6,7 +6,7 @@ import {
   PaginationLink,
 } from "@/components/ui/pagination";
 import React from "react";
-const OntheGoPagination = ({
+const GlobeTalesPagination = ({
   totalDoc,
   limit,
   onPageChange,
@@ -49,4 +49,4 @@ const OntheGoPagination = ({
   );
 };
 
-export default OntheGoPagination;
+export default GlobeTalesPagination;

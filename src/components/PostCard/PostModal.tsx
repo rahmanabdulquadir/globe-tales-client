@@ -18,7 +18,7 @@ import { MessageCircle } from "lucide-react";
 import React, { useState } from "react";
 import { toast } from "sonner";
 import CommentCard from "../commentCard/CommentCard";
-import OntheGoPagination from "../shared/OntheGoPagination";
+import GlobeTalesPagination from "../shared/GlobeTalesPagination";
 import CommentCardSkeleton from "../skeletons/CommentCardSkeleton";
 import PostCardSkeleton from "../skeletons/PostCardSkeletons";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
@@ -164,7 +164,7 @@ const PostModal: React.FC<IPorps> = ({ post, trigger }) => {
           ))}
 
           <DialogFooter className="mt-4 flex justify-start w-full">
-            <OntheGoPagination
+            <GlobeTalesPagination
               totalDoc={data?.totalDoc || 0}
               className="w-fit"
             />

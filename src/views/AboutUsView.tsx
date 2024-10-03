@@ -11,6 +11,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
+
 const cardData = [
   {
     icon: MapPin,
@@ -75,7 +76,12 @@ const AboutUsView = () => {
         </p>
       </header>
 
-      <section className="grid md:grid-cols-2 gap-8 items-center">
+      <section
+   
+  
+      
+        className="grid md:grid-cols-2 gap-8 items-center"
+      >
         <div className="space-y-4">
           <h2 className="text-3xl font-semibold">Our Mission</h2>
           <p className="text-lg text-muted-foreground">

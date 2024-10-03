@@ -1,7 +1,7 @@
 "use client";
 import ChangeUserRole from "@/components/manageUser/ChangeUserRole";
 import GlobeTalesTooltip from "@/components/shared/GlobeTalesTooltip";
-import OntheGoPagination from "@/components/shared/OntheGoPagination";
+import GlobeTalesPagination from "@/components/shared/GlobeTalesPagination";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -171,7 +171,7 @@ const ManageUserView = () => {
         ))}
       </div>
 
-      <OntheGoPagination
+      <GlobeTalesPagination
         totalDoc={data?.totalDoc || 0}
         limit={limit}
         onPageChange={(page) => setCurrentPage(page)}
