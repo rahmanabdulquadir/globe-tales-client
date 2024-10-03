@@ -65,7 +65,7 @@ const ProfileUpdate = () => {
       }
 
       if (!Object.keys(payload).length) {
-        toast.success("nothing");
+        toast.success("Profile Updated");
         toast.dismiss(toastId);
         return;
       }

@@ -34,7 +34,7 @@ const config = {
       colors: {
         // ---->
         primaryTxt: "#253D4E",
-        primaryMat: "#3bb77e",
+        primaryMat: "#000000",
         borderColor: "#e4e4ec",
         borderDark: "#9c9cad",
         // ---->

@@ -8,6 +8,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AccountPanel } from "../client/AccountPanel";
 import { LeftSidebar } from "../client/LeftSidebar";
+import { Button } from "../ui/button";
 
 const Header = () => {
   const location = usePathname();
@@ -35,7 +36,7 @@ const Header = () => {
               key={nav.path}
               href={nav.path}
               className={`text-lg font-bold text-black hover:text-white ${
-                location === nav.path && "font-extrabold text-green-600"
+                location === nav.path && "font-extrabold underline"
               }`}
             >
               {nav.route}
@@ -47,8 +48,8 @@ const Header = () => {
           {user ? (
             <AccountPanel />
           ) : (
-            <Link href="/login" className="text-slate-700 hover:text-green-500">
-              Login
+            <Link href="/login" className="text-2xl text-black hover:text-green-500">
+              <Button className="py-2">Login</Button>
             </Link>
           )}
         </div>

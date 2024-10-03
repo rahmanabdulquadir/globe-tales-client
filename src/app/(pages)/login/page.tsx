@@ -94,7 +94,7 @@ const Login = () => {
           />
         </div>
         <div className="bg-white max-w-[450px]">
-          <h2 className="font-bold mb-6 text-left text-[35px]">Login</h2>
+          <h2 className="font-bold mb-6 text-center text-[35px]">Please Login</h2>
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
@@ -136,7 +136,7 @@ const Login = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-fit px-[15px] center gap-[8px] bg-primaryMat text-white py-[12px] hover:bg-green-600 rounded-[5px]"
+                  className="w-fit px-[15px] center gap-[8px] bg-primaryMat text-white py-[12px] hover:bg-orange-600 rounded-[5px]"
                 >
                   Login <LogIn />
                 </button>
