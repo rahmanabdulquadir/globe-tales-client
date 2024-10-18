@@ -1,7 +1,9 @@
 
 # Globe Tales - Client
 
-### Live URL: https://globe-tales-client.vercel.app/
+### Frontend Live URL: https://globe-tales-client.vercel.app/
+### Backend Live URL: https://globe-tales-server.vercel.app/
+### Backend Github: https://github.com/rahmanabdulquadir/globe-tales-server
 
 ## Project Overview
 
