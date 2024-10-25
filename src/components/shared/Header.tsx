@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
 import { AccountPanel } from "../client/AccountPanel";
 import { LeftSidebar } from "../client/LeftSidebar";
 import { Button } from "../ui/button";
+import logo from "/public/images/Black_And_White_Globe_Y2k_Streetwear_Logo-removebg-preview.png";
 
 const Header = () => {
   const location = usePathname();
@@ -16,13 +17,17 @@ const Header = () => {
   const { user, isLoading, token } = useAppSelector((state) => state.auth);
 
   return (
-    <header className=" border-b sticky top-0 z-50 bg-slate-900  mb-10">
+    <header className="border-b sticky top-0 z-50 bg-slate-950 shadow-lg shadow-slate-900 rounded-lg  mb-10">
       <div className="layout_container flex justify-between gap-4 items-center">
         <div className="flex items-center gap-2">
           <LeftSidebar />
           <Link href={"/"} className="text-lg font-bold ">
-          
-            <h2 className="mt-[-10px] h-full my-auto">Globe Tales</h2>
+            <Image
+              src={logo}
+              alt="logo"
+              height={50}
+              width={100}
+            ></Image>
           </Link>
         </div>
         <nav className="hidden lg:flex gap-5 items-center ">
@@ -43,7 +48,10 @@ const Header = () => {
           {user ? (
             <AccountPanel />
           ) : (
-            <Link href="/login" className="text-2xl text-black hover:text-green-500">
+            <Link
+              href="/login"
+              className="text-2xl text-white hover:text-green-500"
+            >
               <Button className="py-2">Login</Button>
             </Link>
           )}
