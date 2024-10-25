@@ -11,14 +11,13 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
-
 const cardData = [
   {
     icon: MapPin,
     title: "Destination Guides",
     description:
       "Explore comprehensive guides for destinations worldwide, curated by our community of experienced travelers. From hidden local spots to must-see attractions, our guides have you covered.",
-    src: "/images/destination.jpg",
+    src: "https://plus.unsplash.com/premium_photo-1718146019289-783bb69d3133?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDl8fERlc3RpbmF0aW9uJTIwR3VpZGVzfGVufDB8fDB8fHww",
     alt: "Destination guide example",
   },
   {
@@ -26,7 +25,7 @@ const cardData = [
     title: "Community Interaction",
     description:
       "Connect with fellow travelers, share your experiences, and get inspired for your next adventure. Join discussions, ask questions, and make new friends from around the world.",
-    src: "/images/community.jfif",
+    src: "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Q29tbXVuaXR5JTIwSW50ZXJhY3Rpb258ZW58MHx8MHx8fDA%3D",
     alt: "Community interaction example",
   },
   {
@@ -34,7 +33,7 @@ const cardData = [
     title: "Personal Stories",
     description:
       "Read and share personal travel narratives that bring destinations to life and offer unique perspectives. Discover the world through the eyes of fellow travelers and get inspired for your own adventures.",
-    src: "/images/story.jpg",
+    src: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8UGVyc29uYWwlMjBTdG9yaWVzfGVufDB8fDB8fHww",
     alt: "Personal story example",
   },
   {
@@ -42,7 +41,7 @@ const cardData = [
     title: "Premium Content",
     description:
       "Access exclusive features and in-depth content with our premium membership options. Enjoy ad-free browsing, early access to new features, and exclusive travel deals.",
-    src: "/images/premium_content.webp",
+    src: "https://images.unsplash.com/photo-1567861911437-538298e4232c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fFByZW1pdW0lMjBDb250ZW50fGVufDB8fDB8fHww",
     alt: "Premium content example",
   },
   {
@@ -50,7 +49,7 @@ const cardData = [
     title: "Global Reach",
     description:
       "Our platform covers destinations across all continents. Whether you're planning a trip to bustling cities or remote villages, you'll find valuable insights from our diverse community of travelers.",
-    src: "/images/story.jpg",
+    src: "https://images.unsplash.com/photo-1517178104078-b26ea86da614?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzN8fEdsb2JhbCUyMFJlYWNofGVufDB8fDB8fHww",
     alt: "World map with highlighted destinations",
   },
   {
@@ -58,7 +57,7 @@ const cardData = [
     title: "Travel Planning Tools",
     description:
       "Utilize our suite of travel planning tools, including itinerary builders, packing lists, and budget calculators. Make your travel preparations smoother and more efficient with our user-friendly resources.",
-    src: "/images/tools.webp",
+    src: "https://images.unsplash.com/photo-1496950866446-3253e1470e8e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8VHJhdmVsJTIwUGxhbm5pbmclMjBUb29sc3xlbnwwfHwwfHx8MA%3D%3D",
     alt: "Travel planning tools interface",
   },
 ];
@@ -76,12 +75,7 @@ const AboutUsView = () => {
         </p>
       </header>
 
-      <section
-   
-  
-      
-        className="grid md:grid-cols-2 gap-8 items-center"
-      >
+      <section className="grid md:grid-cols-2 gap-8 items-center">
         <div className="space-y-4">
           <h2 className="text-3xl font-semibold">Our Mission</h2>
           <p className="text-lg text-muted-foreground">
@@ -100,7 +94,7 @@ const AboutUsView = () => {
           </p>
         </div>
         <Image
-          src="/images/mission.jpg"
+          src="https://images.unsplash.com/photo-1516207925197-a1eebfc9684b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Travelers exploring a new destination"
           width={600}
           height={400}

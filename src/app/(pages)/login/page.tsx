@@ -93,7 +93,7 @@ const Login = () => {
             height={350}
           />
         </div>
-        <div className="bg-white max-w-[450px]">
+        <div className=" max-w-[450px]">
           <h2 className="font-bold mb-6 text-center text-[35px]">Please Login</h2>
           <Formik
             initialValues={initialValues}
@@ -103,7 +103,7 @@ const Login = () => {
             {({ isSubmitting }) => (
               <Form>
                 <div className="mb-4">
-                  <label className="block text-primaryTxt text-[18px] font-[600]">
+                  <label className="block text-[18px] font-[600]">
                     Email
                   </label>
                   <Field
@@ -118,7 +118,7 @@ const Login = () => {
                   />
                 </div>
                 <div className="mb-4">
-                  <label className="block text-primaryTxt text-[18px] font-[600]">
+                  <label className="block text-[18px] font-[600]">
                     Password
                   </label>
                   <Field
@@ -136,7 +136,7 @@ const Login = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-fit px-[15px] center gap-[8px] bg-primaryMat text-white py-[12px] hover:bg-orange-600 rounded-[5px]"
+                  className="w-fit px-[15px] center gap-[8px] bg-orange-500 text-white py-[12px] hover:bg-orange-600 rounded-[5px]"
                 >
                   Login <LogIn />
                 </button>
@@ -144,27 +144,27 @@ const Login = () => {
             )}
           </Formik>
           <div className="mt-6 text-start">
-            <p className="text-gray-700">
+            <p className="">
               Don&apos;t have an account?{" "}
               <Link
                 href="/register"
-                className="text-primaryMat hover:underline"
+                className="text-orange-400 hover:underline"
               >
                 Create Account
               </Link>
             </p>
-            <p className="text-gray-700">
+            <p className="">
               Dont remeber our password?{" "}
               <Link
                 href="/forgot-password"
-                className="text-primaryMat hover:underline"
+                className="text-orange-400 hover:underline"
               >
-                forgot password
+                Forgot password
               </Link>
             </p>
           </div>
 
-          <p className="mt-4 text-gray-600 text-sm text-start">
+          <p className="mt-4 text-gray-300 text-sm text-start">
             Note: Your personal data will be used to support your experience
             throughout this website, to manage access to your account, and for
             other purposes described in our privacy policy.

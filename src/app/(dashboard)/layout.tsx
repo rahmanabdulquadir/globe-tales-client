@@ -34,7 +34,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   }
 
   return (
-    <ThemeProvider defaultTheme="light">
+    <ThemeProvider defaultTheme="dark">
       <div className="w-full h-screen flex items-start justify-start pb-[30px] ">
         <Sidebar isOpen={isOpen} setIsopen={setIsOpen} />
         <div className="w-full h-full flex-col flex">
