@@ -16,19 +16,13 @@ const Header = () => {
   const { user, isLoading, token } = useAppSelector((state) => state.auth);
 
   return (
-    <header className="py-3 lg:py-3 border-b sticky top-0 z-50  bg-gradient-to-r from-orange-500 via-purple-500 to-purple-700 mb-10">
+    <header className=" border-b sticky top-0 z-50 bg-slate-900  mb-10">
       <div className="layout_container flex justify-between gap-4 items-center">
         <div className="flex items-center gap-2">
           <LeftSidebar />
-          <Link href={"/"} className="text-lg font-bold flex flex-col items-center">
-            <Image
-              width={60}
-              height={60}
-              src="/images/logo.png"
-              alt="logo"
-              className="w-[120px]  md:flex hidden"
-            />
-            <h2 className="mt-[-10px]">Globe Tales</h2>
+          <Link href={"/"} className="text-lg font-bold ">
+          
+            <h2 className="mt-[-10px] h-full my-auto">Globe Tales</h2>
           </Link>
         </div>
         <nav className="hidden lg:flex gap-5 items-center ">
@@ -36,7 +30,7 @@ const Header = () => {
             <Link
               key={nav.path}
               href={nav.path}
-              className={`text-lg font-bold text-black hover:text-white ${
+              className={`text-lg font-bold  ${
                 location === nav.path && "font-extrabold underline"
               }`}
             >
