@@ -15,10 +15,12 @@ const initialValues = {
   password: "",
   confirmPassword: "",
 };
+
 type TFormValues = typeof initialValues;
+
 const validationSchema = Yup.object({
-  firstName: Yup.string().required("* firstName is required"),
-  lastName: Yup.string().required("* lastName is required"),
+  firstName: Yup.string().required("* First name is required"),
+  lastName: Yup.string().required("* Last name is required"),
   email: Yup.string()
     .email("* Invalid email address")
     .required("* Email is required"),
@@ -27,28 +29,22 @@ const validationSchema = Yup.object({
     .oneOf([Yup.ref("password"), undefined], "* Passwords must match")
     .required("* Confirm password is required"),
 });
+
 const CreateAccount = () => {
   const [register] = useRegisterCustomerMutation();
-
   const router = useRouter();
 
   const handleRegister = async (values: TFormValues) => {
     const toastId = toast.loading("Please wait...");
     try {
       const { data } = await register(values);
-      if (!data) {
-        return toast.error("Something went wrong");
-      }
-      if (!data.success) {
-        return toast.error(data.message);
-      }
-      toast.success("Successfully registered", {
-        description: "Now please login",
-      });
+      if (!data) return toast.error("Something went wrong");
+      if (!data.success) return toast.error(data.message);
+
+      toast.success("Successfully registered", { description: "Now please login" });
       router.push("/login");
     } catch (error) {
-      console.log(error);
-
+      console.error(error);
       toast.error("Something went wrong");
     } finally {
       toast.dismiss(toastId);
@@ -56,18 +52,18 @@ const CreateAccount = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row items-center justify-center px-[15px]">
-       <div className="w-[500px] h-[450px] overflow-hidden rounded-[15px]">
-          <Image
-            src={"/images/signUp.jpg"}
-            alt="auth"
-            width={300}
-            className="w-full h-full object-cover"
-            height={350}
-          />
-        </div>
-      <div className="bg-white p-[25px]  max-w-xl shadow-md rounded-[12px]">
-        <h2 className=" font-bold mb-6 text-center text-[35px]">
+    <div className="min-h-screen flex flex-col lg:flex-row items-center justify-center p-4 lg:p-[15px] space-y-6 lg:space-y-0 space-x-10">
+      <div className="w-full lg:w-[500px] lg:h-[450px] h-auto overflow-hidden rounded-[15px]">
+        <Image
+          src="/images/signUp.jpg"
+          alt="auth"
+          width={300}
+          height={350}
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="w-full p-6 lg:p-[25px] max-w-lg shadow-md rounded-[12px]">
+        <h2 className="font-bold text-center text-2xl lg:text-[35px] mb-6">
           Create an Account
         </h2>
         <Formik
@@ -78,13 +74,13 @@ const CreateAccount = () => {
           {({ isSubmitting }) => (
             <Form>
               <div className="mb-4">
-                <label className="block text-primaryTxt text-[18px] font-[600]">
-                  Your firstname
+                <label className="block text-white text-lg font-semibold">
+                  Your First Name
                 </label>
                 <Field
                   type="text"
                   name="firstName"
-                  className="mt-1 block w-full px-3 py-2 border border-borderColor rounded-md outline-none"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                 />
                 <ErrorMessage
                   name="firstName"
@@ -93,13 +89,13 @@ const CreateAccount = () => {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-primaryTxt text-[18px] font-[600]">
-                  Your last name
+                <label className="block text-white text-lg font-semibold">
+                  Your Last Name
                 </label>
                 <Field
                   type="text"
                   name="lastName"
-                  className="mt-1 block w-full px-3 py-2 border border-borderColor rounded-md outline-none"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                 />
                 <ErrorMessage
                   name="lastName"
@@ -108,13 +104,13 @@ const CreateAccount = () => {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-primaryTxt text-[18px] font-[600]">
+                <label className="block text-white text-lg font-semibold">
                   Email
                 </label>
                 <Field
                   type="email"
                   name="email"
-                  className="mt-1 block w-full px-3 py-2 border border-borderColor rounded-md outline-none"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                 />
                 <ErrorMessage
                   name="email"
@@ -123,13 +119,13 @@ const CreateAccount = () => {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-primaryTxt text-[18px] font-[600]">
+                <label className="block text-white text-lg font-semibold">
                   Password
                 </label>
                 <Field
                   type="password"
                   name="password"
-                  className="mt-1 block w-full px-3 py-2 border border-borderColor rounded-md outline-none"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                 />
                 <ErrorMessage
                   name="password"
@@ -138,13 +134,13 @@ const CreateAccount = () => {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-primaryTxt text-[18px] font-[600]">
+                <label className="block text-white text-lg font-semibold">
                   Confirm Password
                 </label>
                 <Field
                   type="password"
                   name="confirmPassword"
-                  className="mt-1 block w-full px-3 py-2 border border-borderColor rounded-md outline-none"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                 />
                 <ErrorMessage
                   name="confirmPassword"
@@ -152,11 +148,10 @@ const CreateAccount = () => {
                   className="text-red-500 text-sm"
                 />
               </div>
-
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-primaryMat text-white py-[12px]  hover:bg-orange-600 rounded-[5px]"
+                className="w-full bg-orange-500 text-white py-3 hover:bg-orange-600 rounded-md"
               >
                 Submit & Register
               </button>
@@ -164,18 +159,15 @@ const CreateAccount = () => {
           )}
         </Formik>
         <div className="mt-6 text-start">
-          <p className="text-gray-700">
+          <p className="text-white">
             Already have an account?{" "}
-            <Link href="/login" className="text-primaryMat">
+            <Link href="/login" className="text-orange-500 hover:underline">
               Login
             </Link>
           </p>
         </div>
-
-        <p className="mt-4 text-gray-600 text-sm text-start">
-          Note: Your personal data will be used to support your experience
-          throughout this website, to manage access to your account, and for
-          other purposes described in our privacy policy.
+        <p className="mt-4 text-gray-300 text-sm text-start">
+          Note: Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.
         </p>
       </div>
     </div>

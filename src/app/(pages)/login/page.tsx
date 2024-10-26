@@ -19,6 +19,7 @@ const initialValues = {
   password: "",
 };
 type TFormValues = typeof initialValues;
+
 const validationSchema = Yup.object({
   email: Yup.string()
     .email("* Invalid email address")
@@ -40,17 +41,17 @@ const Login = () => {
       const error: any = err;
       if (error) {
         if (error.status === 401) {
-          return toast.error("password didn;t matched", {
-            description: "try to remember your password and try again",
+          return toast.error("Password didn't match", {
+            description: "Try to remember your password and try again",
           });
         }
         if (error.status === 404) {
           return toast.error("Invalid email address", {
-            description: "Enter a valid email adress.",
+            description: "Enter a valid email address.",
           });
         }
 
-        return toast.error(error.data?.message || "Unknown error occureds");
+        return toast.error(error.data?.message || "Unknown error occurred");
       }
 
       if (!data) {
@@ -82,19 +83,22 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-[15px]">
-      <div className="flex items-center justify-center gap-[50px]">
-        <div className="w-[500px] h-[450px] overflow-hidden rounded-[15px]">
+    <div className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10">
+        {/* Image Section */}
+        <div className="w-full md:w-[300px] lg:w-[500px] h-[300px] md:h-[450px] overflow-hidden rounded-lg">
           <Image
-            src={"/images/authLady.png"}
+            src="/images/authLady.png"
             alt="auth"
-            width={300}
+            width={500}
+            height={450}
             className="w-full h-full object-cover"
-            height={350}
           />
         </div>
-        <div className=" max-w-[450px]">
-          <h2 className="font-bold mb-6 text-center text-[35px]">Please Login</h2>
+        
+        {/* Form Section */}
+        <div className="w-full max-w-md md:max-w-[450px] text-center md:text-left">
+          <h2 className="font-bold text-3xl md:text-[35px] mb-6">Please Login</h2>
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
@@ -103,13 +107,11 @@ const Login = () => {
             {({ isSubmitting }) => (
               <Form>
                 <div className="mb-4">
-                  <label className="block text-[18px] font-[600]">
-                    Email
-                  </label>
+                  <label className="block text-lg font-semibold">Email</label>
                   <Field
                     type="email"
                     name="email"
-                    className="mt-1 block w-full px-3 py-2 border border-borderColor rounded-md outline-none"
+                    className="mt-1 block w-full px-3 py-2 border rounded-md"
                   />
                   <ErrorMessage
                     name="email"
@@ -118,13 +120,11 @@ const Login = () => {
                   />
                 </div>
                 <div className="mb-4">
-                  <label className="block text-[18px] font-[600]">
-                    Password
-                  </label>
+                  <label className="block text-lg font-semibold">Password</label>
                   <Field
                     type="password"
                     name="password"
-                    className="mt-1 block w-full px-3 py-2 border border-borderColor rounded-md outline-none"
+                    className="mt-1 block w-full px-3 py-2 border rounded-md"
                   />
                   <ErrorMessage
                     name="password"
@@ -132,42 +132,35 @@ const Login = () => {
                     className="text-red-500 text-sm"
                   />
                 </div>
-
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-fit px-[15px] center gap-[8px] bg-orange-500 text-white py-[12px] hover:bg-orange-600 rounded-[5px]"
+                  className="w-full md:w-auto px-6 py-3 bg-orange-500 text-white hover:bg-orange-600 rounded-md flex items-center justify-center gap-2"
                 >
                   Login <LogIn />
                 </button>
               </Form>
             )}
           </Formik>
-          <div className="mt-6 text-start">
-            <p className="">
+          
+          {/* Links Section */}
+          <div className="mt-6">
+            <p>
               Don&apos;t have an account?{" "}
-              <Link
-                href="/register"
-                className="text-orange-400 hover:underline"
-              >
+              <Link href="/register" className="text-orange-400 hover:underline">
                 Create Account
               </Link>
             </p>
-            <p className="">
-              Dont remeber our password?{" "}
-              <Link
-                href="/forgot-password"
-                className="text-orange-400 hover:underline"
-              >
+            <p>
+              Forgot your password?{" "}
+              <Link href="/forgot-password" className="text-orange-400 hover:underline">
                 Forgot password
               </Link>
             </p>
           </div>
-
-          <p className="mt-4 text-gray-300 text-sm text-start">
-            Note: Your personal data will be used to support your experience
-            throughout this website, to manage access to your account, and for
-            other purposes described in our privacy policy.
+          
+          <p className="mt-4 text-gray-500 text-sm">
+            Note: Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.
           </p>
         </div>
       </div>
