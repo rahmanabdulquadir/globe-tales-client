@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
@@ -14,6 +15,8 @@ import logo from "/public/images/Black_And_White_Globe_Y2k_Streetwear_Logo-remov
 const Header = () => {
   const location = usePathname();
 
+  // const googleUser = session.user
+  // console.log(googleUser);
   const { user, isLoading, token } = useAppSelector((state) => state.auth);
 
   return (
@@ -22,12 +25,7 @@ const Header = () => {
         <div className="flex items-center gap-2">
           <LeftSidebar />
           <Link href={"/"} className="text-lg font-bold ">
-            <Image
-              src={logo}
-              alt="logo"
-              height={50}
-              width={100}
-            ></Image>
+            <Image src={logo} alt="logo" height={50} width={100}></Image>
           </Link>
         </div>
         <nav className="hidden lg:flex gap-5 items-center ">

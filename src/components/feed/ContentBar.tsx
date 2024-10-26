@@ -11,7 +11,7 @@ const ContentBar = () => {
   const { user } = useAppSelector((state) => state.auth);
 
   return (
-    <div className="w-64 p-4 hidden lg:block ">
+    <div className="w-64 p-4 lg:block ">
       <h2 className="font-semibold mb-4">Seemed Stories</h2>
 
       {user ? (
@@ -19,7 +19,7 @@ const ContentBar = () => {
       ) : (
         <Button
           variant="outline"
-          className="w-full mb-4 bg-primaryMat text-white"
+          className="w-full mb-4"
           onClick={() => toast.error("Login first to create post")}
         >
           <PlusCircle className="mr-2 h-4 w-4" />

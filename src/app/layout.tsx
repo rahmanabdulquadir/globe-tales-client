@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={quickSand.className + " bg-slate-950"}>
+      <body className={quickSand.className}>
         <ProviderContainer>{children}</ProviderContainer>
       </body>
     </html>

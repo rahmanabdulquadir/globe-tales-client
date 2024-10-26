@@ -10,11 +10,12 @@ import { LogIn } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { BsGoogle } from "react-icons/bs";
 import { GrUser, GrUserAdmin } from "react-icons/gr";
 import { useDispatch } from "react-redux";
 import { toast } from "sonner";
 import * as Yup from "yup";
-
+import {signIn} from "next-auth/react"
 const initialValues = {
   email: "",
   password: "",
@@ -143,13 +144,16 @@ const Login = () => {
                   />
                 </div>
 
-                <button
+               <div className="flex gap-x-5">
+               <button
                   type="submit"
                   disabled={isSubmitting}
                   className="w-full md:w-auto px-6 py-3 bg-orange-500 text-black hover:bg-gray-200 rounded-md flex items-center justify-center gap-2"
                 >
                   Login <LogIn />
                 </button>
+               
+               </div>
 
                 <div className="flex gap-4 mt-4">
                   <button
@@ -184,6 +188,10 @@ const Login = () => {
               </Form>
             )}
           </Formik>
+
+          <button onClick={() => signIn("google", {
+                  callbackUrl: "http://localhost:3000"
+                })} className="w-full font-bold md:w-auto px-6 py-3 bg-orange-500 text-black hover:bg-gray-200 rounded-md flex items-center justify-center gap-2">Login With Google <BsGoogle/></button>
 
           {/* Links Section */}
           <div className="mt-6">
