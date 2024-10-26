@@ -27,19 +27,19 @@ export function AccountPanel() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="bg-gradient-to-r from-orange-500 via-purple-500 to-purple-700 center p-[5px] rounded-full cursor-pointer border border-black">
-          <div className="w-[70px] h-[70px] rounded-full overflow-hidden">
+        <button className="bg-slate-800 center p-[5px] rounded-full cursor-pointer border border-black">
+          <div className="w-[60px] h-[60px] rounded-full overflow-hidden">
             <Image
               alt="profile"
               src={user?.image || "/images/avatar.jpg"}
-              width={100}
-              height={100}
+              width={60}
+              height={60}
               className="w-full h-full object-cover"
             />
           </div>
         </button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56 bg-white">
+      <DropdownMenuContent className="w-56 bg-black">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
