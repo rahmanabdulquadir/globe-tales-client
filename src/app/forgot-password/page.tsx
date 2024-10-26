@@ -64,7 +64,7 @@ const ForgotPassword = () => {
             <ArrowLeft />
             Go back to login
           </Link>
-          <h1 className="text-[25px] text-primaryTxt font-[700]">
+          <h1 className="text-[25px] text-white font-[700]">
             Forgot password
           </h1>
           <Formik
@@ -75,7 +75,7 @@ const ForgotPassword = () => {
             {() => (
               <Form className="mt-[20px]">
                 <div className="mb-4">
-                  <label className="block text-primaryTxt text-[18px] font-[600]">
+                  <label className="block text-white text-[18px] font-[600]">
                     Email
                   </label>
                   <Field type="email" name="email" as={Input} />
@@ -88,7 +88,7 @@ const ForgotPassword = () => {
 
                 <button
                   type="submit"
-                  className="w-full px-[15px] center gap-[8px] bg-primaryMat text-white py-[12px] hover:bg-green-600 rounded-[5px]"
+                  className="w-full px-[15px] center gap-[8px] bg-white text-black py-[12px] hover:bg-gray-200 rounded-[5px]"
                 >
                   Go ahead <ArrowRight />
                 </button>
