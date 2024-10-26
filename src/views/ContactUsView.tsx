@@ -16,7 +16,7 @@ const ContactUsView = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast.success(
-      "Thank you for your message. We&apos;ll get back to you soon."
+      "Thank you for your message. We'll get back to you soon."
     );
   };
 
@@ -81,7 +81,7 @@ const ContactUsView = () => {
             <CardContent className="space-y-4">
               <div className="flex items-center space-x-2">
                 <MapPin className="w-5 h-5 text-muted-foreground" />
-                <span>123 Travel Street, Adventure City, 12345</span>
+                <span>123 Travel Street, San Diego, 12345</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="w-5 h-5 text-muted-foreground" />
@@ -93,7 +93,7 @@ const ContactUsView = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Globe className="w-5 h-5 text-muted-foreground" />
-                <span>www.traveltips.com</span>
+                <span>www.globe-tales.com</span>
               </div>
             </CardContent>
           </Card>
