@@ -10,8 +10,6 @@ import { LogIn } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { BsGoogle } from "react-icons/bs";
-import { GrUser, GrUserAdmin } from "react-icons/gr";
 import { useDispatch } from "react-redux";
 import { toast } from "sonner";
 import * as Yup from "yup";
@@ -152,50 +150,11 @@ const Login = () => {
                 >
                   Login <LogIn />
                 </button>
-               
-               </div>
-
-                <div className="flex gap-4 mt-4">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setFieldValue("email", adminCredentials.email);
-                      setFieldValue("password", adminCredentials.password);
-                    }}
-                    className="w-full md:w-auto px-4 py-2 bg-white text-black rounded-md hover:bg-gray-200 flex justify-center items-center gap-2"
-                  >
-                    Login as Admin 
-                    <GrUserAdmin/>
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setFieldValue("email", userCredentials.email);
-                      setFieldValue("password", userCredentials.password);
-                    }}
-                    className="w-full md:w-auto px-4 py-2 bg-white text-black rounded-md hover:bg-gray-200 flex justify-center items-center gap-2"
-                  >
-                    Login as User
-                    <GrUser/>
-                  </button>
-                </div>
-                <h3 className="font-bold text-sm mt-4 text-gray-300">
-                  Use the buttons below to quickly fill in login credentials:
-                  'Login as Admin' for admin access and 'Login as User' for a
-                  standard user account. This feature helps you easily explore
-                  the application without needing to manually enter credentials
-                </h3>
               </Form>
             )}
           </Formik>
-
-          <button onClick={() => signIn("google", {
-                  callbackUrl: "http://localhost:3000"
-                })} className="w-full font-bold md:w-auto px-6 py-3 bg-orange-500 text-black hover:bg-gray-200 rounded-md flex items-center justify-center gap-2">Login With Google <BsGoogle/></button>
-
-          {/* Links Section */}
-          <div className="mt-6">
-            <p>
+          <div className="mt-6 text-start">
+            <p className="">
               Don&apos;t have an account?{" "}
               <Link
                 href="/register"
