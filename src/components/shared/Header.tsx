@@ -20,7 +20,7 @@ const Header = () => {
   const { user, isLoading, token } = useAppSelector((state) => state.auth);
 
   return (
-    <header className="border-b sticky top-0 z-50 bg-slate-950 shadow-lg shadow-slate-900  mb-10">
+    <header className="border-b sticky top-0 z-50 shadow-md  mb-10">
       <div className="layout_container flex justify-between gap-4 items-center">
         <div className="flex items-center gap-2">
           <LeftSidebar />

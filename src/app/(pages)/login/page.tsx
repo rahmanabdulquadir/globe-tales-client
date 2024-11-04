@@ -14,7 +14,8 @@ import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { toast } from "sonner";
 import * as Yup from "yup";
-import {signIn} from "next-auth/react"
+import { signIn } from "next-auth/react";
+
 const initialValues = {
   email: "",
   password: "",
@@ -143,15 +144,36 @@ const Login = () => {
                   />
                 </div>
 
-               <div className="flex gap-x-5">
-               <button
+                <div className="flex gap-x-5 mb-4">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setFieldValue("email", adminCredentials.email);
+                      setFieldValue("password", adminCredentials.password);
+                    }}
+                    className="px-4 py-2 bg-white text-black rounded-md"
+                  >
+                    Admin Login
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setFieldValue("email", userCredentials.email);
+                      setFieldValue("password", userCredentials.password);
+                    }}
+                    className="px-4 py-2 bg-white text-black rounded-md"
+                  >
+                    User Login
+                  </button>
+                </div>
+
+                <button
                   type="submit"
                   disabled={isSubmitting}
                   className="w-full md:w-auto px-6 py-3 bg-orange-500 text-black hover:bg-gray-200 rounded-md flex items-center justify-center gap-2"
                 >
                   Login <LogIn />
                 </button>
-                </div>
               </Form>
             )}
           </Formik>

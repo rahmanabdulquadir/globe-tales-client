@@ -21,7 +21,7 @@ const CommentCard: React.FC<IPorps> = ({ comment, setPage }) => {
         <AvatarFallback>{user.firstName.charAt(0)}</AvatarFallback>
       </Avatar>
       <div className="flex-1">
-        <div className="bg-[#f1f1f1] rounded-lg p-3">
+        <div className=" rounded-lg p-3">
           <div className="flex flex-col">
             <span className="font-semibold">
               {user.firstName} {user.lastName}

@@ -27,7 +27,7 @@ export function AccountPanel() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="bg-slate-800 center p-[5px] rounded-full cursor-pointer border border-black">
+        <button className="bg-slate-700 center p-[3px] rounded-full cursor-pointer border">
           <div className="w-[60px] h-[60px] rounded-full overflow-hidden">
             <Image
               alt="profile"
@@ -39,7 +39,7 @@ export function AccountPanel() {
           </div>
         </button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56 bg-black">
+      <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>

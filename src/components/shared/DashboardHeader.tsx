@@ -20,13 +20,15 @@ const DashboardHeader: React.FC<ISideBarState> = ({ setIsOpen }) => {
   const { user } = useAppSelector((state) => state.auth);
   return (
     <div className="w-full flex items-center justify-between px-[20px]  py-[10px] border-b-[1px] border-muted shrink-0">
-      <Image
-        width={80}
-        height={80}
-        src="/images/logo.png"
-        alt="logo"
-        className="w-[80px] md:flex hidden"
-      />
+      <Link href={'/'}>
+        <Image
+          width={80}
+          height={80}
+          src="/images/logo.png"
+          alt="logo"
+          className="w-[80px] md:flex hidden"
+        />
+      </Link>
       <Button
         className="menuBTn flex md:hidden"
         onClick={() => setIsOpen(true)}
