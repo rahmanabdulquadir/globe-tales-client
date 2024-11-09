@@ -20,9 +20,7 @@ const CategorySelector: React.FC<IPorps> = ({ onChange }) => {
   const ref = useRef<HTMLInputElement | null>(null);
   const suggestionRef = useRef<HTMLDivElement | null>(null);
 
-  const { data } = useGetCategoriesByNameQuery(debouncevalue, {
-    skip: !debouncevalue,
-  });
+  const { data } = useGetCategoriesByNameQuery(debouncevalue);
 
   const handleClickOutside = (e: MouseEvent) => {
     if (

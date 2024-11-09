@@ -15,7 +15,7 @@ const MyFollowers = ({ heading = true }: { heading?: boolean }) => {
 
   return (
     <div>
-      {heading ? <h2 className="font-semibold my-4">Followers</h2> : ""}
+      {heading ? <h2 className="font-semibold my-4">Followers: </h2> : ""}
 
       {data?.data?.map(({ follower }) => (
         <div
@@ -40,7 +40,7 @@ const MyFollowers = ({ heading = true }: { heading?: boolean }) => {
         <div>
           <p className="text-center text-[17px] font-[700]">No Follower</p>
           <p className="text-center text-[14px]">
-            Upload your adventure post on newsfeed reach more followers
+            Upload your adventure post on news feed to reach more followers
           </p>
         </div>
       ) : (

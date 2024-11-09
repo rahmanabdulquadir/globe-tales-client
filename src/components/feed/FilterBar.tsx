@@ -33,7 +33,7 @@ const FilterBar = () => {
         <h3 className="mb-2 text-lg font-medium">Search</h3>
         <Input
           type="text"
-          placeholder="Search products..."
+          placeholder="Search by any related keyword"
           defaultValue={searchParams.get("searchTerm") || ""}
           onChange={(e) => setSearchValue(e.target.value)}
         />

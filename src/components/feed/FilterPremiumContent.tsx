@@ -35,9 +35,9 @@ const FilterPremiumContent = () => {
       className="relative w-[200px] group/premium cursor-pointer"
       onClick={handleSetPremium}
     >
-      <div className="p-[3px] bg-slate-400  relative overflow-hidden flex items-center w-full h-[40px] rounded-[8px] z-20">
-        <div className="px-[5px] w-full h-full relative z-20 rounded-[5px] flex items-center gap-[20px] ">
-          <span className="text-black  font-[600]">Premium Only</span>
+      <div className="p-[3px]   relative overflow-hidden flex items-center w-full h-[40px] rounded-[8px] z-20">
+        <div className="px-[5px] w-full h-full relative z-20 rounded-[5px] flex items-center gap-[20px] border-[2px] border-black">
+          <span className="text-black   font-[600]">Premium Only</span>
           <Switch checked={isPremium} className="bg-black" />
         </div>
         {/* <div className="absolute top-0 left-0 position_center w-[220px] h-[220px] avatarGradient z-10 origin-center"></div> */}

@@ -151,7 +151,7 @@ const Login = () => {
                       setFieldValue("email", adminCredentials.email);
                       setFieldValue("password", adminCredentials.password);
                     }}
-                    className="px-4 py-2 bg-white text-black rounded-md"
+                    className="px-4 py-2 bg-zinc-200 text-black rounded-md"
                   >
                     Admin Login
                   </button>
@@ -161,7 +161,7 @@ const Login = () => {
                       setFieldValue("email", userCredentials.email);
                       setFieldValue("password", userCredentials.password);
                     }}
-                    className="px-4 py-2 bg-white text-black rounded-md"
+                    className="px-4 py-2 bg-zinc-200 text-black rounded-md"
                   >
                     User Login
                   </button>
@@ -170,7 +170,7 @@ const Login = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full md:w-auto px-6 py-3 bg-orange-500 text-black hover:bg-gray-200 rounded-md flex items-center justify-center gap-2"
+                  className="w-full md:w-auto px-6 py-3 bg-zinc-400 text-black hover:bg-gray-200 rounded-md flex items-center justify-center gap-2"
                 >
                   Login <LogIn />
                 </button>

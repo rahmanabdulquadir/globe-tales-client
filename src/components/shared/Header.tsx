@@ -24,8 +24,8 @@ const Header = () => {
       <div className="layout_container flex justify-between gap-4 items-center">
         <div className="flex items-center gap-2">
           <LeftSidebar />
-          <Link href={"/"} className="text-lg font-bold ">
-            <Image src={logo} alt="logo" height={50} width={100}></Image>
+          <Link href={"/"} className="text-lg  font-bold ">
+            <Image className="bg-black rounded-full" src={logo} alt="logo" height={50} width={100}></Image>
           </Link>
         </div>
         <nav className="hidden lg:flex gap-5 items-center ">

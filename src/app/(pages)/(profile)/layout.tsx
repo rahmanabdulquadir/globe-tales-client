@@ -23,12 +23,12 @@ const Layout = ({
     return <></>;
   }
 
-  if(user.role === "admin") {
+  if (user.role === "admin") {
     router.push("/dashboard ");
   }
 
   return (
-    <div className="w-full min-h-screen flex items-start justify-center  py-[50px] bg-gradient-to-r from-orange-500 via-purple-500 to-purple-700 mb-10">
+    <div className="w-full min-h-screen flex items-start justify-center  py-[50px] mb-10">
       <div className="min-h-[400px] overflow-auto flex flex-col md:flex-row items-start justify-start gap-[20px] md:p-[25px] rounded-[10px] shadow-md w-full">
         <ProfileSidebar />
         {children}
